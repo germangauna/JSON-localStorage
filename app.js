@@ -82,5 +82,54 @@
 // console.log(objeto);
 
 
+//JSON.parse
 // como hago para que me lo traiga como relamente es?? ya que el JSON.stringify le da la estructura par guardarlo en el  localStorage.
 // Ahora que metodo usamos para traerlo como el formato que es realmeente???
+// Aparece el JSON.parse, este lo que hace es traer el objeto o el arreglo como era realmente, entonces hay que parsearlo.
+
+// let objeto = JSON.parse(localStorage.getItem("objeto"));
+// console.log(objeto);
+
+// otra forma de hacerlo es guardarlo en otra variable
+
+// let objetoString = localStorage.getItem("objeto")
+// let objeto = JSON.parse(objetoString);
+// console.log(objeto);
+
+// let arregloString = localStorage.getItem("arreglo");
+// let arreglo = JSON.parse(arregloString)
+// console.log(arreglo);
+
+// como guardar un arrego con varios objetos dentro
+
+// const guardarStorage = (clave, valor) => {localStorage.setItem(clave, valor)
+// };
+
+// const productos = [
+//     { id: 1, producto: "arroz", precio: 125},
+//     { id: 2, producto: "fideos", precio: 70},
+//     { id: 3, producto: "pan", precio: 50},
+//     { id: 4, producto: "flan", precio: 100},
+// ];
+
+// for (const producto of productos) {
+//     guardarStorage(producto.id, JSON.stringify(producto))
+// }
+
+
+// localStorage.setItem("productos", JSON.stringify(productos)
+// )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
