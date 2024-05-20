@@ -4,6 +4,8 @@
 // reinicias la informacion no se Pierde, en cambio el sessionStorage si, si se apaga el computador se pierde la informacion
 // por lo tanto en ciertos casos tenemos que tener en cuenta esta condicion,
 
+//getItem trae lo guardado
+//setItem guarda los valores
 
 // localStorage.setItem("nombre", "andres");
 // localStorage.setItem("numero", 5);
@@ -121,11 +123,78 @@
 // )
 
 
+//vamos hacer un ejemplo de ssionStorage
+
+// let usuario;
+// let usuarioStorage = localStorage.getItem("usuario");
+
+// // console.log(usuarioStorage);
+
+// if (usuarioStorage) {
+//     let mensaje = `bienvenido ${usuarioStorage}`;
+//     alert(mensaje);
+// } else {
+//     usuario = prompt("ingrese su nombre");
+//     localStorage.setItem("usuario", usuario);
+//     alert("bienvenido por primera vez")
+// }
 
 
+// que pasa si lo hacemos con ssesionStorage?
+
+// let usuario;
+// let usuarioStorage = sessionStorage.getItem("usuario");
+
+// // console.log(usuarioStorage);
+
+// if (usuarioStorage) {
+//     let mensaje = `bienvenido ${usuarioStorage}`;
+//     alert(mensaje);
+// } else {
+//     usuario = prompt("ingrese su nombre");
+//     sessionStorage.setItem("usuario", usuario);
+//     alert("bienvenido por primera vez")
+// }
 
 
+const productos = [
+    { id: 1, producto: "arroz", precio: 125},
+    { id: 2, producto: "fideos", precio: 70},
+    { id: 3, producto: "pan", precio: 50},
+    { id: 4, producto: "flan", precio: 100},
+];
 
+
+let carritoStorage = localStorage.setItem("carrito");
+let carrito = [];
+
+if (carritoStorage) {
+    carrito = JSON.parse(carritoStorage);
+}
+
+if (carrito.length > 0) {
+    carrito.forEach(elemento => {
+        let item = document.createElement("div");
+        item.innerHTML = `
+                            <h2>id: ${elemento.id}</h2>
+                            <p>nombre: ${elemento.producto}</p>
+                            <b>$ ${elemento.precio}</b>
+        `;
+    });
+
+    document.body.append(item);
+
+}else {
+    let item = document.createElement("div");
+    item.innerHTML = "no hay productos";
+    
+    document.body.append(item);
+};
+
+let boton = document.createElement("boton");
+boton.addEventListener("click", () => {
+    localStorage.clear();
+})
 
 
 
